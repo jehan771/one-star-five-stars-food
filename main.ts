@@ -30,6 +30,7 @@ if (periods !== 1 || !SENTENCE.endsWith(".")) {
   fail(`expected exactly one sentence, found ${periods} periods`);
 }
 if (/[\n\r]/.test(SENTENCE)) fail("sentence contains a line break");
+if (/  /.test(SENTENCE)) fail("sentence contains a double space");
 if (Buffer.byteLength(SENTENCE, "utf8") !== SENTENCE.length) {
   fail("sentence is not pure ASCII/UTF-8 single-byte text");
 }
